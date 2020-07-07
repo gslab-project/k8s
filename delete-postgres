@@ -2,6 +2,7 @@ kubectl create -f postgres-configmap.yaml
 kubectl create -f postgres-storage.yaml
 kubectl create -f postgres-deployment.yaml
 kubectl create -f postgres-service.yaml
+kubectl create -f java-web-deployment.yaml
 kubectl get svc postgres
 --------------------------------------------------------
 kubectl delete service postgres 
@@ -10,7 +11,9 @@ kubectl delete configmap postgres-config
 kubectl delete persistentvolumeclaim postgres-pv-claim
 kubectl delete persistentvolume postgres-pv-volume
 --------------------------------------------------------
-kubectl exec --stdin --tty postgres-5dbcc6764c-9dhs2 bash
+kubectl exec --stdin --tty pod/postgres-5dbcc6764c-dhsw7 bash
 psql -h localhost -U postgresadmin --password -p 31070 postgresdb
 psql -h localhost -U postgresadmin postgresdb
 --------------------------------------------------------
+
+kubectl exec --stdin --tty pod/java-web-5b665bc849-24gxx bash

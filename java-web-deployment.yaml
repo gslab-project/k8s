@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: java-web
+  labels:
+    app: java-web
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: java-web
+  template:
+    metadata:
+      labels:
+        app: java-web
+    spec:
+      containers:
+      - name: java-web
+        image: sagargslab/java-web-app:1.1
+        ports:
+        - containerPort: 8080
+        envFrom:
+            - configMapRef:
+                name: postgres-config
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: java-web-service
+spec:
+  selector:
+    app: java-web
+  type: LoadBalancer  
+  ports:
+    - protocol: TCP
+      port: 8080
+      targetPort: 8080
+      nodePort: 30000
