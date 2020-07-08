@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: java-cron
-        image: sagargslab/java-cron-app:1.1
+        image: sagargslab/java-cron-app:1.3
         ports:
         - containerPort: 8081
         envFrom:

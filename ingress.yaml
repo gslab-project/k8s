@@ -1,0 +1,17 @@
+apiVersion: networking.k8s.io/v1beta1 # for versions before 1.14 use extensions/v1beta1
+kind: Ingress
+metadata:
+  name: java-ingress
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    nginx.ingress.kubernetes.io/rewrite-target: /
+    ingress.kubernetes.io/rewrite-target: /
+spec:
+  rules:
+  - host: acsp-gslab.assignment
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: java-web-service
+          servicePort: 8080

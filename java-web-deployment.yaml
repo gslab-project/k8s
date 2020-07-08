@@ -30,7 +30,7 @@ metadata:
 spec:
   selector:
     app: java-web
-  type: LoadBalancer  
+  type: LoadBalancer
   ports:
     - protocol: TCP
       port: 8080
