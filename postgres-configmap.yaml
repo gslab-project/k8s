@@ -6,7 +6,5 @@ metadata:
     app: postgres
 data:
   POSTGRES_DB: postgresdb
-  POSTGRES_USER: postgresadmin
-  POSTGRES_PASSWORD: admin123
   POSTGRES_DB_HOST: postgres
   POSTGRES_DB_PORT: "5432"

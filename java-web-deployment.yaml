@@ -16,12 +16,14 @@ spec:
     spec:
       containers:
       - name: java-web
-        image: sagargslab/java-web-app:1.1
+        image: sagargslab/java-web-app:1.5
         ports:
         - containerPort: 8080
         envFrom:
-            - configMapRef:
-                name: postgres-config
+          - configMapRef:
+              name: postgres-config
+          - secretRef:
+              name: postgres-secret
 ---
 apiVersion: v1
 kind: Service
@@ -30,9 +32,8 @@ metadata:
 spec:
   selector:
     app: java-web
-  type: LoadBalancer
+  type: NodePort
   ports:
     - protocol: TCP
       port: 8080
       targetPort: 8080
-      nodePort: 30000
