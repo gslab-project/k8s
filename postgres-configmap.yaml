@@ -8,3 +8,4 @@ data:
   POSTGRES_DB: postgresdb
   POSTGRES_DB_HOST: postgres
   POSTGRES_DB_PORT: "5432"
+  CRON_EXPRESSION: "0/15 * * * * *"

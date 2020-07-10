@@ -13,10 +13,11 @@ spec:
     metadata:
       labels:
         app: java-web
-    spec:
+    spec:      
       containers:
       - name: java-web
-        image: sagargslab/java-web-app:1.5
+        imagePullPolicy: Always
+        image: swapnildharane/java-web-app:latest
         ports:
         - containerPort: 8080
         envFrom:
@@ -36,4 +37,4 @@ spec:
   ports:
     - protocol: TCP
       port: 8080
-      targetPort: 8080
+      nodePort: 30000
