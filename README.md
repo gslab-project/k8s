@@ -105,7 +105,7 @@ Now the service will be accessible using java-web-app.com on browser.
 To make it work we need to add minikube node ip into /etc/hosts.
 Check IP using command - `minikube ip`
 Map IP to name in `/etc/hosts` file as shown below.
-`172.58.3.100 java-web-app.com`
+`<minikube ip> java-web-app.com`
 
 ---
 Now the when all files are ready then we can create cluster using below commands inside floder where all yamls resides.
