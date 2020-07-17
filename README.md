@@ -47,6 +47,9 @@ Github repos for both java applications -
 [Java web app](https://github.com/gslab-project/java-web-app)
 [Java cron app](https://github.com/gslab-project/java-cron-app)
 
+## k8s cluster
+![](k8sassignment.png)
+
 ## Prerequisite
 - Install minikube to create cluster on VM.
 - Install kubectl
